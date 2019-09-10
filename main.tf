@@ -22,6 +22,10 @@ POLICY
   }
 }
 
+resource "aws_s3_bucket_public_access_block" "website_bucket_public_access_block" {
+  bucket = "${aws_s3_bucket.website_bucket.id}"
+}
+
 # ACM
 
 resource "aws_acm_certificate" "ssl_certificate" {
